@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+      http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
+    <dubbo:application name="e5-web-manager" />
+
+    <!-- 使用zookeeper注册中心暴露服务地址，自己虚拟机地址-->
+    <dubbo:registry protocol="zookeeper" address="192.168.177.123:2181" />
+    <!-- 使用组播形式提供暴露地址 -->
+    <!--<dubbo:registry address="multicast://224.5.6.7:1234" />-->
+    <!-- 不使用注册中心-->
+    <!--<dubbo:registry address="N/A" />-->
+    <!-- 监控中心配置，protocol="registry"，表示从注册中心发现服务地址 -->
+    <dubbo:monitor protocol="registry"/>
+  
+	<!-- 服务消费者-->
+	 <!-- 引用服务　 -->
+    <!-- 直连 url="dubbo://192.168.1.15:20com.sxhhm.e3.service.goods.api.ItemService"-->
+    <dubbo:reference interface="com.sxh.service.goods.api.ItemService" id="itemService" check="false" timeout="1200000"/>
+    <dubbo:reference interface="com.sxh.service.goods.api.ItemCategoryService" id="itemCategoryService" check="false" timeout="1200000"/>
+<!--前台管理:-->
+    <dubbo:reference interface="com.sxh.service.content.api.ContentCategoryService" id="contentCategoryService" check="false" timeout="1200000"/>
+    <dubbo:reference interface="com.sxh.service.content.api.ContentService" id="contentService" check="false" timeout="1200000"/>
+</beans>

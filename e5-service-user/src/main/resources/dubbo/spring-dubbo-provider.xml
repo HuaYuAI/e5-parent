@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context-4.0.xsd
+      http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+
+    <!-- 提供方应用信息，用于计算依赖关系 -->
+    <dubbo:application name="e5-service-user" />
+
+    <!-- 使用zookeeper注册中心暴露服务地址 -->
+    <dubbo:registry protocol="zookeeper" address="192.168.177.123:2181" />
+
+
+    <!-- 使用multicast广播注册中心暴露服务地址-->
+   <!--<dubbo:registry address="multicast://224.5.6.7:1234" />-->
+
+
+    <!-- 用dubbo协议在20900端口暴露服务 -->
+    <dubbo:protocol name="dubbo" port="20882"  />
+
+    <!-- 当ProtocolConfig和ServiceConfig某属性没有配置时,采用此缺省值 -->
+    <!-- 超时重试，默认是failover timeout:多长时间超时 retries：超时或者找不到服务重试次数
+     负载均衡loadbalance="robin"  threadpool="fixed" 固定连接池 threads="500" 最大500个线程可以同时访问
+     accepts ：？-->
+    <dubbo:provider timeout="30000" threadpool="fixed" threads="500" accepts="1000" />
+
+    <!-- 声明需要暴露的用户服务接口　-->
+    <dubbo:service retries="0" interface="com.sxh.service.user.api.UserService" ref="userService"  />
+
+</beans>

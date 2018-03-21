@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-lazy-init="true">
+    <description>Shiro安全配置</description>
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="shiroDbRealm" />
+    </bean>
+
+    <bean id="shiroDbRealm" class="com.sxh.web.manager.shiro.ShiroDbRealm">
+    </bean>
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager" />
+        <property name="loginUrl" value="/login" />
+        <property name="unauthorizedUrl" value="/unAuth" /> <!-- 无授权 -->
+        <property name="successUrl" value="/index"/>
+        <property name="filterChainDefinitions">
+            <!-- roles (角色)和perms（权限）只能存在一个  谁在下面谁生效
+             anon:匿名，任何人可以访问
+             authc：需要授权
+             -->
+            <value>
+                /favicon.ico = anon
+                /login=authc
+                /logout = logout
+                /images/** = anon
+                /css/** = anon
+                /js/** = anon
+                /admin/** = roles[admin]
+                /item-list = roles[admin]
+                /** = authc
+            </value>
+        </property>
+
+    </bean>
+</beans>

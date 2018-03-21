@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="e5-api-content" />
+        <module name="e5-api-goods" />
+        <module name="e5-api-order" />
+        <module name="e5-api-user" />
+        <module name="e5-common" />
+        <module name="e5-service-content" />
+        <module name="e5-service-goods" />
+        <module name="e5-service-order" />
+        <module name="e5-service-search" />
+        <module name="e5-service-user" />
+        <module name="e5-web-cart" />
+        <module name="e5-web-manager" />
+        <module name="e5-web-order" />
+        <module name="e5-web-portal" />
+        <module name="e5-web-sso" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="e3-service-search" target="1.8" />
+      <module name="e3-web-portal" target="1.8" />
+      <module name="e3-web-sso" target="1.8" />
+      <module name="e5-api-content" target="1.8" />
+      <module name="e5-api-goods" target="1.8" />
+      <module name="e5-api-order" target="1.8" />
+      <module name="e5-api-user" target="1.8" />
+      <module name="e5-common" target="1.8" />
+      <module name="e5-parent" target="1.8" />
+      <module name="e5-service-content" target="1.8" />
+      <module name="e5-service-goods" target="1.8" />
+      <module name="e5-service-order" target="1.8" />
+      <module name="e5-service-search" target="1.8" />
+      <module name="e5-service-user" target="1.8" />
+      <module name="e5-web-cart" target="1.8" />
+      <module name="e5-web-manager" target="1.8" />
+      <module name="e5-web-order" target="1.8" />
+      <module name="e5-web-portal" target="1.8" />
+      <module name="e5-web-sso" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

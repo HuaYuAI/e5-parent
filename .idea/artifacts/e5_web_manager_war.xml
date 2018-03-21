@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="e5-web-manager:war">
+    <output-path>$PROJECT_DIR$/e5-web-manager/target</output-path>
+    <root id="archive" name="e5-web-manager.war">
+      <element id="artifact" artifact-name="e5-web-manager:war exploded" />
+    </root>
+  </artifact>
+</component>

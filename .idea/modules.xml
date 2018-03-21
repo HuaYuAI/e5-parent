@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/e5-api-content/e5-api-content.iml" filepath="$PROJECT_DIR$/e5-api-content/e5-api-content.iml" />
+      <module fileurl="file://$PROJECT_DIR$/e5-api-goods/e5-api-goods.iml" filepath="$PROJECT_DIR$/e5-api-goods/e5-api-goods.iml" />
+      <module fileurl="file://$PROJECT_DIR$/e5-api-order/e5-api-order.iml" filepath="$PROJECT_DIR$/e5-api-order/e5-api-order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/e5-api-user/e5-api-user.iml" filepath="$PROJECT_DIR$/e5-api-user/e5-api-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/e5-common/e5-common.iml" filepath="$PROJECT_DIR$/e5-common/e5-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/e5-parent.iml" filepath="$PROJECT_DIR$/e5-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/e5-service-content/e5-service-content.iml" filepath="$PROJECT_DIR$/e5-service-content/e5-service-content.iml" />
+      <module fileurl="file://$PROJECT_DIR$/e5-service-goods/e5-service-goods.iml" filepath="$PROJECT_DIR$/e5-service-goods/e5-service-goods.iml" />
+      <module fileurl="file://$PROJECT_DIR$/e5-service-order/e5-service-order.iml" filepath="$PROJECT_DIR$/e5-service-order/e5-service-order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/e5-service-search/e5-service-search.iml" filepath="$PROJECT_DIR$/e5-service-search/e5-service-search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/e5-service-user/e5-service-user.iml" filepath="$PROJECT_DIR$/e5-service-user/e5-service-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/e5-web-cart/e5-web-cart.iml" filepath="$PROJECT_DIR$/e5-web-cart/e5-web-cart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/e5-web-manager/e5-web-manager.iml" filepath="$PROJECT_DIR$/e5-web-manager/e5-web-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/e5-web-order/e5-web-order.iml" filepath="$PROJECT_DIR$/e5-web-order/e5-web-order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/e5-web-portal/e5-web-portal.iml" filepath="$PROJECT_DIR$/e5-web-portal/e5-web-portal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/e5-web-sso/e5-web-sso.iml" filepath="$PROJECT_DIR$/e5-web-sso/e5-web-sso.iml" />
+    </modules>
+  </component>
+</project>

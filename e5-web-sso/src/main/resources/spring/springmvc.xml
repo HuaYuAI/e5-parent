@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 配置自动扫描的包 -->
+    <context:component-scan base-package="com.sxh"/>
+
+    <!-- 配置视图解析器 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp" />
+
+    <!-- 配置 multipartResolver 以支持文件上传-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8"/>
+        <property name="maxUploadSize" value="4096000"/>
+        <property name="maxInMemorySize" value="4096000"></property>
+    </bean>
+
+    <!-- 开启Annotation注解控制器 -->
+    <mvc:annotation-driven/>
+
+    <!-- 把静态资源文件css js 交给默认servlet去处理，而不用springmvc controller去处理 -->
+    <mvc:default-servlet-handler/>
+    <!-- 欢迎界面-->
+    <mvc:view-controller path="/page/register" view-name="register"></mvc:view-controller>
+
+    <!-- 配置静态资源映射， 好处是映射到的静态资源都 进行缓存，提供性能 -->
+    <!--<mvc:resources location="/js/" mapping="/js/**"/>
+    <mvc:resources location="/css/" mapping="/css/**"/>-->
+
+</beans>
